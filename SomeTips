@@ -33,5 +33,14 @@ I build a directory for all de dependencies of SLAM
       sudo apt-get install libglew-dev
       sudo apt-get install libpython2.7-dev
   ` cd to the dir cd ~/SLAM
+    run     git clone https://github.com/stevenlovegrove/Pangolin.git
+            cd Pangolin
+            mkdir build
+            cd build
+            cmake ..
+            make -j
+            sudo make install
   
-  
+ ` Install opencv
+   Both opencv2 and opencv3 is ok. u can change to different version for different projects in CmakeLists file
+   
