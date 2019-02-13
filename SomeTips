@@ -60,5 +60,19 @@ I build a directory for all de dependencies of SLAM
             cd build
             cmake ..
             make -j4 (or make is ok)
+            sudo install make
+ 
+ 
+ 
+ ` Install Eigen3
+   Download from http://eigen.tuxfamily.org (Vision above 3.1 is ok)
+   cd to the dir
+   run      mkdir build
+            cd build
+            cmake …
+            sudo make install
    
-   
+ 3. Compile ORBSLAM2
+ run        cd ~/ORB_SLAM2
+            chmod +x build.sh
+            ./build.sh
