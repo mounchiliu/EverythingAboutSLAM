@@ -1,0 +1,10 @@
+Preparation
+1. Install Linux 
+See some tips in my blog https://blog.csdn.net/qq_31707275/article/details/82709133
+Some more problems encountered 
+`cant open linux software
+`sol: Click settings -> Software and updates -> choose the best sever for your current location 
+      -> run code 'sudo apt-get update' in cmd -> restart your system
+      
+
+2. Environment setting for ORBSLAM2
