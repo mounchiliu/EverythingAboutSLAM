@@ -44,6 +44,7 @@ I build a directory for all de dependencies of SLAM
  ` Install opencv
    Both opencv2 and opencv3 is ok. u can change to different version for different projects in CmakeLists file
    Download opencv from https://opencv.org/releases.html
+   Unzip the file
    
    ` Install dependencies
    $ sudo apt-get install build-essential
