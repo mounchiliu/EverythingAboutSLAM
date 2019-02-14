@@ -24,7 +24,7 @@ Some more problems encountered:
   sudo apt-get install cmake
   sudo apt-get install git
 
-` Download ORBSLAM2 from git clone https://github.com/raulmur/ORB_SLAM2.git ORB_SLAM2
+` Download ORBSLAM2 from cmd 'git clone https://github.com/raulmur/ORB_SLAM2.git ORB_SLAM2'
 
 I built a directory for all the dependencies of SLAM 
 
