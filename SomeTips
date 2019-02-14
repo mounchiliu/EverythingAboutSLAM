@@ -1,7 +1,7 @@
 Preparation
 1. Install Linux 
 See some tips in my blog https://blog.csdn.net/qq_31707275/article/details/82709133
-Some more problems encountered 
+Some more problems encountered:
 `cant open linux software
 `sol: Click settings -> Software and updates -> choose the best sever for your current location 
       -> run code 'sudo apt-get update' in cmd -> restart your system
@@ -12,7 +12,7 @@ Some more problems encountered
    qtcreator More details in https://doc.qt.io/qt-5/linux.html
    download from https://download.qt.io/archive/qt/5.12/5.12.1/
    
-   cd/....  // cd to the directory you download the atcreator
+   cd/....  (// cd to the directory you download the atcreator)
    run      sudo chmod +x qt-opensource-linux-x64-5.12.0.run
    install  sudo ./qt-opensource-linux-x64-5.12.0.run
    
@@ -26,7 +26,7 @@ Some more problems encountered
 
 ` Download ORBSLAM2 from git clone https://github.com/raulmur/ORB_SLAM2.git ORB_SLAM2
 
-I build a directory for all de dependencies of SLAM 
+I built a directory for all the dependencies of SLAM 
 
 ` Install Pangolin
   ` install dependencies
@@ -102,4 +102,22 @@ I build a directory for all de dependencies of SLAM
 
  4. Test the ORB_SLAM2 on dataset
  I tried it on TUM dataset. (Download from http://vision.in.tum.de/data/datasets/rgbd-dataset/download)
+ unzip it & put it in the dir of ORB_SLAM2
+ 
+ ` Download 'associate.py' from https://vision.in.tum.de/data/datasets/rgbd-dataset/tools
+   Put it in the dir of /ORB_SLAM2
+   
+ ` cd to the ORB_SLAM2 dir cd ~/ORB_SLAM2
+   Associate RGB images and depth images using the python script associate.py using
+      python associate.py PATH_TO_SEQUENCE/rgb.txt PATH_TO_SEQUENCE/depth.txt > associations.txt
+      e.g. python associate.py rgbd_dataset_freiburg2_pioneer_360/rgb.txt rgbd_dataset_freiburg2_pioneer_360/depth.txt > associations.txt
+      
+  ` Execute the following command. (You cloud try it on different camera settings by modify the file 'xxx.yaml')
+    ```
+    ./Examples/Monocular/mono_tum Vocabulary/ORBvoc.txt Examples/Monocular/TUMX.yaml PATH_TO_SEQUENCE_FOLDER ASSOCIATIONS_FILE
+    ```
+    e.g. (Here we use RGB-D dataset)
+    ./Examples/RGB-D/rgbd_tum Vocabulary/ORBvoc.txt Examples/RGB-D/TUM1.yaml rgbd_dataset_freiburg2_pioneer_360 associations.txt
+      
+ 
 
