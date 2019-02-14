@@ -76,3 +76,30 @@ I build a directory for all de dependencies of SLAM
  run        cd ~/ORB_SLAM2
             chmod +x build.sh
             ./build.sh
+            
+ I encountered the following error 
+ error: ‘usleep’ was not declared in this scope
+                 usleep(1000);
+ This is may because some bugs on current version of Eigen while integration to ubuntu16
+ sol:
+ add the following code at the beginning of the source code
+ #include <unistd.h>
+ 
+ src code that required to be modified
+ Examples/Monocular/mono_euroc.cc
+ Examples/Monocular/mono_kitti.cc
+ Examples/Monocular/mono_tum.cc
+ Examples/RGB-D/rgbd_tum.cc
+ Examples/Stereo/stereo_euroc.cc
+ Examples/Stereo/stereo_kitti.cc
+ src/LocalMapping.cc
+ src/LoopClosing.cc
+ src/System.cc
+ src/Tracking.cc
+ src/Viewer.cc
+
+ Then, run './build.sh' again. Everything is fine now.
+
+ 4. Test the ORB_SLAM2 on dataset
+ I tried it on TUM dataset. (Download from http://vision.in.tum.de/data/datasets/rgbd-dataset/download)
+
