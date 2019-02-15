@@ -59,7 +59,7 @@ I built a directory for all the dependencies of SLAM
    run      mkdir build
             cd build
             cmake ..
-            make -j4 (or make is ok)
+            make -j4 (or 'make' is ok)
             sudo install make
  
  
