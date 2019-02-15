@@ -69,7 +69,7 @@ I built a directory for all the dependencies of SLAM
    cd to the dir
    run      mkdir build
             cd build
-            cmake …
+            cmake ..
             sudo make install
    
  3. Compile ORBSLAM2
