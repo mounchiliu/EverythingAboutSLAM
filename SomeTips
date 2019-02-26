@@ -2,7 +2,7 @@ Preparation
 1. Install Linux 
 See some tips in my blog https://blog.csdn.net/qq_31707275/article/details/82709133
 Some more problems encountered:
-`cant open linux software
+`cant open Linux software
 `sol: Click settings -> Software and updates -> choose the best sever for your current location 
       -> run code 'sudo apt-get update' in cmd -> restart your system
       
@@ -41,9 +41,9 @@ I built a directory for all the dependencies of SLAM
             make -j
             sudo make install
   
- ` Install opencv
+ ` Install OpenCV
    Both opencv2 and opencv3 is ok. You can change to different version for different projects in CmakeLists file
-   Download opencv from https://opencv.org/releases.html (v3.4.2 is ok for my laptop and project)
+   Download OpenCV from https://opencv.org/releases.html (v3.4.2 is ok for my laptop and project)
    Unzip the file
    
    ` Install dependencies
@@ -112,12 +112,9 @@ I built a directory for all the dependencies of SLAM
       python associate.py PATH_TO_SEQUENCE/rgb.txt PATH_TO_SEQUENCE/depth.txt > associations.txt
       e.g. python associate.py rgbd_dataset_freiburg2_pioneer_360/rgb.txt rgbd_dataset_freiburg2_pioneer_360/depth.txt > associations.txt
       
-  ` Execute the following command. (You cloud try it on different camera settings by modify the file 'xxx.yaml')
+  ` Execute the following command. (You cloud try it on different camera settings by modifying the file 'xxx.yaml')
     ```
     ./Examples/Monocular/mono_tum Vocabulary/ORBvoc.txt Examples/Monocular/TUMX.yaml PATH_TO_SEQUENCE_FOLDER ASSOCIATIONS_FILE
     ```
     e.g. (Here we use RGB-D dataset)
     ./Examples/RGB-D/rgbd_tum Vocabulary/ORBvoc.txt Examples/RGB-D/TUM1.yaml rgbd_dataset_freiburg2_pioneer_360 associations.txt
-      
- 
-
