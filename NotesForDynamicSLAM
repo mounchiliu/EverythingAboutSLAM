@@ -1,3 +1,6 @@
+**Keep Updating in **
+https://github.com/mounchiliu/IndividualProject
+
 **Notes for DynSLAM** 
 
 **DynSLAM** presents a stereo-based dense mapping algorithm which is able to simultaneously reconstruct the static background, the moving objects and the potentially moving but currently stationary objects (e.g. parked cars) separately.
