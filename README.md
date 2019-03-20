@@ -17,4 +17,7 @@
 ` Some state-of-the-art SLAM technologies.
 
 
+3. General Notes for SLAM in outdoor dynamic environments 
+
+
 Keep updating...
