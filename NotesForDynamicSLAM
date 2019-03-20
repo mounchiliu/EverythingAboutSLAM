@@ -1,0 +1,64 @@
+**Notes for DynSLAM** 
+
+**DynSLAM** presents a stereo-based dense mapping algorithm which is able to simultaneously reconstruct the static background, the moving objects and the potentially moving but currently stationary objects (e.g. parked cars) separately.
+
+  1. Pre-process the input by computing a dense map, sparse scene flow and semantic segmentation of the RGB data.
+
+  2. Compute VO from the sparse scene flow.
+
+  3. Separate inputs (colour, depth, and sparse flow) into multiple frames: background & potentially dynamic object in the frame.
+
+  4. Estimate the 3D motion of each new detection using the scene flow and semantic segmentation information, comparing it to the camera pose to classify each object as static, dynamic, or uncertain.
+
+
+
+     How to estimate whether an object is dynamic or not?
+
+     - For each segmented object, the masked scene flow associated with the specific object instance is used as input to estimate the motion of the camera w.r.t the object instance which is assumed to be static.  If the estimation is successful, then the 3D motion of the object is equal to the inverse of the camera motion.
+
+     - For static objects, the resulting 3D object motion will be nearly identical to the camera's movement.
+
+
+  5. For each rigid object of interest (moving or potentially moving), initialize or update its reconstruction.
+
+  6. Update the static map reconstruction
+
+   
+     For the static map and individual object reconstruction, DynSLAM uses InfiniTAM for volumetric fusion.  DynSLAM separates the static background from the dynamic objects.  
+     - The estimated vehicle movement (I suppose here it mentioned as camera pose) by the visual odometry is used to fuse the static parts of the input colour and depth maps, which are identified based on the instance-aware semantic segmentation component.
+    
+    
+     - Both moving and potentially moving objects are reconstructed individually.  The estimated 3D motions of the individual objects are used for the object volumetric fusion.
+  
+  7. Perform voxel garbage collection to remove voxels allocated spuriously due to artifacts in the depth map.
+  
+  
+  **Notes for SLAM with DATMO (Wang, 2007)** 
+  
+  1. SLAM with generalized objects calculates a joint posterior over all generated objects and the robot.  It contains a structure for motion modelling of generalized objects.  --> It is computationally demanding and infeasible.
+  
+  2. SLAM with DATMO decomposes the estimation problem into two separate estimators (posteriors for stationary objects and moving objects).  --> lower dimensional than SLAM with generalized objects.
+  The system is able to deal with issues of perception modelling, data association, and moving objects detection.
+
+Generally, a Bayesian formula was introduced to solve SLAM and DATMO.
+
+   -  How does this system detect moving objects?
+      Two approaches -> one for consistency based approach 
+                        and one for motion object map based approach.
+                        
+      1. Consistency-based Detection
+      
+      detect moving objects -> combination of the result from segmentation and moving point detection for determining the dynamic objects   
+      
+      - Detect moving objects:    
+        for a new scan of the local surrounding map, find the relative pose -> transform the local surrounding map tp the current coordinate system -> transform to a polar coordinate system -> detect moving points by comparing values along the range axis of the polar coordinate system.
+        
+      - Determine dynamic objects:      
+        A segment is identified as a potential moving object if the ratio of the number of moving points to the number of total points is greater than 0.5.
+        
+        Problem: temporary stationary objects cannot be detected & If the time period between consecutive measurements is very short, the motion of moving objects will be too small to detect.
+        e.g. Detection of pedestrians at very low speed is difficult to detect.
+        
+      2. Moving Object Map based Detection
+      
+      The system has a map that contains information from previous moving objects.  If a blob is in an area that was previously occupied by moving objects, this object can be considered as a potential moving object.
