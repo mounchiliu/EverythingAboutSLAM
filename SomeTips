@@ -120,4 +120,13 @@ I built a directory for all the dependencies of SLAM
     ./Examples/RGB-D/rgbd_tum Vocabulary/ORBvoc.txt Examples/RGB-D/TUM1.yaml rgbd_dataset_freiburg2_pioneer_360 associations.txt
     
     
+  5. Evaluate the system
+  We evalute the system with the tools provided by TUM
+  link: https://svncvpr.in.tum.de/cvpr-ros-pkg/trunk/rgbd_benchmark/rgbd_benchmark_tools/src/rgbd_benchmark_tools/
+  
+  (Use the ground truth provided by the dataset for evaluation)
+  
+  Compute absolute trajectory error (AT-RMSE):
+  ./evaluate_ate.py groundtruth-poses.txt exported-poses.txt --plot plot.pdf –verbose
+
     
