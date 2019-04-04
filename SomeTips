@@ -134,7 +134,7 @@ I built a directory for all the dependencies of SLAM
   chmod u+x program_name. Then execute it.
   
   
-  If we use ORB-SLAM with mono-camera, we need to aligns the scale of the estimated trajectory with ground-truth.
+  If we use ORB-SLAM2 with mono-camera, we need to align the scale of the estimated trajectory with ground-truth.
   see in https://github.com/raulmur/evaluate_ate_scale
   
   
