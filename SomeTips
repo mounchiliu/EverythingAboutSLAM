@@ -129,4 +129,15 @@ I built a directory for all the dependencies of SLAM
   Compute absolute trajectory error (AT-RMSE):
   ./evaluate_ate.py groundtruth-poses.txt exported-poses.txt --plot plot.pdf –verbose
 
-    
+  Encountered problems:
+  ./evaluate_ate.py: Permission denied
+  chmod u+x program_name. Then execute it.
+  
+  
+  If we use ORB-SLAM with mono-camera, we need to aligns the scale of the estimated trajectory with ground-truth.
+  see in https://github.com/raulmur/evaluate_ate_scale
+  
+  
+  
+  
+  
