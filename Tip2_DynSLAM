@@ -132,23 +132,32 @@ sudo apt-get install libxmu-dev libxi-dev freeglut3 freeglut3-dev glew-utils lib
 mkdir build && cd build && cmake .. && make -j$(nproc)
 
 error:
-1.error: ‘setw’ was not declared in this scope 
+- 1.error: ‘setw’ was not declared in this scope 
 sol: add #include <iomanip>
 
-2.error: ‘resize’ is not a member of ‘cv’
+- 2.error: ‘resize’ is not a member of ‘cv’
   ‘cvtColor’ is not a member of ‘cv’ 
   ‘putText’ is not a member of ‘cv’ 
 sol:add #include "opencv2/imgproc/imgproc.hpp"
         #include "opencv2/opencv.hpp"
 
-3.error nvcc fatal   : redefinition of argument 'std'
+- 3.error nvcc fatal   : redefinition of argument 'std'
 find the location of the file showing this error.  Modify the cmakelist to delete -std=c++11
 
-4.error: ‘imread’ is not a member of ‘cv’
+- 4.error: ‘imread’ is not a member of ‘cv’
 sol:#include "opencv2/imgproc/imgproc.hpp"
     #include "opencv2/opencv.hpp"
 
-
-5.error: ‘glDrawFrustrum’ is not a member of ‘pangolin’
+- 5.error: ‘glDrawFrustrum’ is not a member of ‘pangolin’
   pangolin API change name glDrawFrustrum to glDrawFrustum
   just find the function and change it.
+  
+  Now everything works fine!!!!!
+  
+  
+8.test DynSLAM
+  - 1. Download the demo sequence 
+  https://drive.google.com/uc?export=download&confirm=Nnbd&id=1V-I4Tle7MNbmnf2qRe6aTpjxOld2M2i8
+  
+  - 2.Extract that to a directory, and run DynSLAM on it (the mkdir circumvents a silly bug): 
+  bash mkdir -p csv/ && build/DynSLAM --use_dispnet --dataset_root=path/to/extracted/archive --dataset_type=kitti-odometry
