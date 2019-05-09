@@ -164,3 +164,5 @@ sol:#include "opencv2/imgproc/imgproc.hpp"
   then run:
   build/DynSLAM --use_dispnet --dataset_root=path/to/extracted/archive --dataset_type=kitti-odometry
   e.g. build/DynSLAM --use_dispnet --dataset_root=mini-seq-06 --dataset_type=kitti-odometry
+
+  Note: shift + A for auto play
