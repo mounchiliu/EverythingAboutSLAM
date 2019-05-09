@@ -34,4 +34,13 @@
     Error: kernel blabla fail. 
     Reason: install linus using UEFI.  Disable the Secure Boot in bios
     
+    reinstall
     
+    Then, Would you like to run the nvidia-xconfigutility to automatically update your x configuration so that the NVIDIA x driver ...
+    Select Yes
+    
+    
+   - check whether install successfully
+   cat /proc/driver/nvidia/version  
+   OR
+   sudo nvidia-smi
