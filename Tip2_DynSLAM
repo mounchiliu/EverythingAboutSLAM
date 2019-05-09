@@ -75,4 +75,14 @@
    nvcc --version
    
  4.3 install cuda samples.
+   sudo apt-get install freeglut3 freeglut3-dev
+   cd ~/NVIDIA_CUDA-8.0_Samples/common
+   gedit findgllib.mk
+   change [UBUNTU_PKG_NAME = "nvidia-418"] according to your driver version, save
+   cd ~/NVIDIA_CUDA-8.0_Samples  
+   make -j12 
+   
+   cd bin/x86_64/linux/release/  
+   test: ./deviceQuery      
+   
    
