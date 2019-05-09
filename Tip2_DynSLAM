@@ -54,3 +54,13 @@
    install:
    sudo sh cuda_8.0.61_375.26_linux.run 
    
+   Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 375.26?
+   no, we have installed one.
+   
+   Install the CUDA 8.0 Toolkit?
+   yes
+   
+   else yes
+   
+   
+   
