@@ -74,3 +74,5 @@
    test:
    nvcc --version
    
+ 4.3 install cuda samples.
+   
