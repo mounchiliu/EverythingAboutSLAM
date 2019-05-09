@@ -7,3 +7,29 @@
 3.Pangolin
 
 4.Cuda 8
+4.1 NVIDIA driver
+  - Independencies 
+  sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler  --no-install-recommends libboost-all-dev  libopenblas-dev liblapack-dev libatlas-base-dev libgflags-dev libgoogle-glog-dev liblmdb-dev
+
+  - https://www.nvidia.cn/Download/index.aspx?lang=cn 
+    Download according to your environment.
+    
+    
+  - Drag the download under the 'Home' dir.
+  
+  - clean all files relates to Nvidia
+    sudo apt-get --purge remove nvidia-*
+    sudo apt autoremove
+
+
+  - make sure you can use sudo 
+    sudo gedit /etc/sudoers
+    comment #Defaults	env_reset
+            #Defaults	mail_badpass
+            #Defaults	secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"
+  
+  
+  - shut down graphic interface
+    sudo /etc/init.d/lightdm stop
+    
+    
