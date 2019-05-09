@@ -129,3 +129,13 @@ sudo apt-get install libxmu-dev libxi-dev freeglut3 freeglut3-dev glew-utils lib
  
 7.build project
 mkdir build && cd build && cmake .. && make -j$(nproc)
+
+error:
+1.error: ‘setw’ was not declared in this scope 
+sol: add #include <iomanip>
+
+2.error: ‘resize’ is not a member of ‘cv’
+  ‘cvtColor’ is not a member of ‘cv’ 
+  ‘putText’ is not a member of ‘cv’ 
+sol:add #include “opencv2/imgproc/imgproc.hpp” 
+        #include “opencv2/opencv.hpp”
