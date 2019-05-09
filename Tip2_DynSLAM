@@ -142,3 +142,12 @@ sol:add #include "opencv2/imgproc/imgproc.hpp"
 
 3.error nvcc fatal   : redefinition of argument 'std'
 find the location of the file showing this error.  Modify the cmakelist to delete -std=c++11
+
+4.sth error relates to eigen
+#include <Eigen/Dense>
+#include <Eigen/Core>
+#define HAVE_EIGEN and pangolin::ToEigen
+add to corresponding file.
+
+5.error: ‘cout’ is not a member of ‘std’
+#include <iostream>
