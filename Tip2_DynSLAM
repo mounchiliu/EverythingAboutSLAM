@@ -3,7 +3,7 @@
   **Some files(submodule) under the src dir need to be downloaded by yourself.**
   **eigen3 can be download from the 'Eigen website'**
   
-2.Download opencv 2.4.9; cmake&make it;
+2.Download opencv 2.4.9; cmake&make it; 
 
 3.Pangolin
 
