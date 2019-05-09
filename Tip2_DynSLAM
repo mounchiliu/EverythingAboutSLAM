@@ -40,7 +40,17 @@
     Select Yes
     
     
-   - check whether install successfully
-   cat /proc/driver/nvidia/version  
-   OR
-   sudo nvidia-smi
+    check whether install successfully
+    cat /proc/driver/nvidia/version  
+    OR
+    sudo nvidia-smi
+
+   start graphic interface
+   sudo /etc/init.d/lightdm start\
+   
+4.2 Install Cuda 8.0
+   download cuda 8.0 tool kit CUDA Toolkit 8.0 (download .runfile)
+   
+   install:
+   sudo sh cuda_8.0.61_375.26_linux.run 
+   
