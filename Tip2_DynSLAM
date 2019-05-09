@@ -160,5 +160,7 @@ sol:#include "opencv2/imgproc/imgproc.hpp"
   https://drive.google.com/uc?export=download&confirm=Nnbd&id=1V-I4Tle7MNbmnf2qRe6aTpjxOld2M2i8
   
   - 2.Extract that to a directory, and run DynSLAM on it (the mkdir circumvents a silly bug): 
-  bash mkdir -p csv/ && build/DynSLAM --use_dispnet --dataset_root=path/to/extracted/archive --dataset_type=kitti-odometry
-  e.g. bash mkdir -p csv/ && build/DynSLAM --use_dispnet --dataset_root=mini-seq-06 --dataset_type=kitti-odometry
+  make a csv file in the root dir of the project:mkdir -p csv 
+  then run:
+  build/DynSLAM --use_dispnet --dataset_root=path/to/extracted/archive --dataset_type=kitti-odometry
+  e.g. build/DynSLAM --use_dispnet --dataset_root=mini-seq-06 --dataset_type=kitti-odometry
