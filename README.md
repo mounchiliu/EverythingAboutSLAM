@@ -10,14 +10,14 @@
 
 ` How to run ORB_SLAM2 system on dataset
 
+2. Tips for implementing DynSLAM
 
-
-2. Papers
+3. Papers
 
 ` Some state-of-the-art SLAM technologies.
 
 
-3. General Notes for SLAM in outdoor dynamic environments 
+4. General Notes for SLAM in outdoor dynamic environments 
 
 
 Keep updating...
