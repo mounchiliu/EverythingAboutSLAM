@@ -20,13 +20,6 @@
   - clean all files relates to Nvidia
     sudo apt-get --purge remove nvidia-*
     sudo apt autoremove
-
-
-  - make sure you can use sudo 
-    sudo gedit /etc/sudoers
-    comment #Defaults	env_reset
-            #Defaults	mail_badpass
-            #Defaults	secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"
   
   
   - shut down graphic interface
@@ -37,5 +30,8 @@
     sudo ./NVIDIA-Linux-x86_64-410.78.run -no-x-check -no-nouveau-check -no-opengl-files
     
     Select Continue, yes, ok
+    
+    Error: kernel blabla fail. 
+    Reason: install linus using UEFI.  Disable the Secure Boot in bios
     
     
