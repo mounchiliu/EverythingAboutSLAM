@@ -32,4 +32,10 @@
   - shut down graphic interface
     sudo /etc/init.d/lightdm stop
     
+  - Install driver
+    sudo chmod  a+x NVIDIA-Linux-x86_64-410.78.run  #adjust to your own file
+    sudo ./NVIDIA-Linux-x86_64-410.78.run -no-x-check -no-nouveau-check -no-opengl-files
+    
+    Select Continue, yes, ok
+    
     
