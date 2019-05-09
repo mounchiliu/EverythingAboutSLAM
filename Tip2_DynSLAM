@@ -70,3 +70,7 @@
    at the end.
    
    source ~/.bashrc
+
+   test:
+   nvcc --version
+   
