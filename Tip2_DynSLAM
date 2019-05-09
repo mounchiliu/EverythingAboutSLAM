@@ -1,6 +1,7 @@
 1.Clone the repository if you haven't already:
   git clone --recursive https://github.com/AndreiBarsan/DynSLAM
-  **Some files under the src dir need to be downloaded by yourself.**
+  **Some files(submodule) under the src dir need to be downloaded by yourself.**
+  **eigen3 can be download from the 'Eigen website'**
   
 2.Download opencv 2.4.9; cmake&make it;
 
@@ -85,7 +86,7 @@
    cd bin/x86_64/linux/release/  
    test: ./deviceQuery      
    
-   
+
 5. install nvidia-docker2
    sudo apt-get update
    sudo apt-get -y install apt-transport-https ca-certificates curl software-properties-common
@@ -143,11 +144,11 @@ sol:add #include "opencv2/imgproc/imgproc.hpp"
 3.error nvcc fatal   : redefinition of argument 'std'
 find the location of the file showing this error.  Modify the cmakelist to delete -std=c++11
 
-4.sth error relates to eigen
-#include <Eigen/Dense>
-#include <Eigen/Core>
-#define HAVE_EIGEN and pangolin::ToEigen
-add to corresponding file.
+4.error: ‘imread’ is not a member of ‘cv’
+sol:#include "opencv2/imgproc/imgproc.hpp"
+    #include "opencv2/opencv.hpp"
 
-5.error: ‘cout’ is not a member of ‘std’
-#include <iostream>
+
+5.error: ‘glDrawFrustrum’ is not a member of ‘pangolin’
+  pangolin API change name glDrawFrustrum to glDrawFrustum
+  just find the function and change it.
