@@ -1,0 +1,9 @@
+1.Clone the repository if you haven't already:
+  git clone --recursive https://github.com/AndreiBarsan/DynSLAM
+  **Some files under the src dir need to be downloaded by yourself.**
+  
+2.Download opencv 2.4.9; cmake&make it;
+
+3.Pangolin
+
+4.Cuda 8
