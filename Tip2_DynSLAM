@@ -139,3 +139,6 @@ sol: add #include <iomanip>
   ‘putText’ is not a member of ‘cv’ 
 sol:add #include "opencv2/imgproc/imgproc.hpp"
         #include "opencv2/opencv.hpp"
+
+3.error nvcc fatal   : redefinition of argument 'std'
+find the location of the file showing this error.  Modify the cmakelist to delete -std=c++11
