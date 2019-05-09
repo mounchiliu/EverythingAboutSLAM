@@ -4,6 +4,9 @@
   **eigen3 can be download from the 'Eigen website'**
   
 2.Download opencv 2.4.9; cmake&make it; 
+If you have installed e.g. opencv 3 previous, you should change sth in the CMakeLists
+find_package(OpenCV REQUIRED) -> find_package(OpenCV 2 REQUIRED) 
+This makes your project to know which version of opencv you'd like to use
 
 3.Pangolin
 
