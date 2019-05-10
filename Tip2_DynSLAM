@@ -165,7 +165,7 @@ sol:#include "opencv2/imgproc/imgproc.hpp"
   - 2.Extract that to a directory, and run DynSLAM on it (the mkdir circumvents a silly bug): 
   make a csv file in the root dir of the project:mkdir -p csv 
   then run:
-  build/DynSLAM --use_dispnet --dataset_root=path/to/extracted/archive --dataset_type=kitti-odometry
-  e.g. build/DynSLAM --use_dispnet --dataset_root=mini-seq-06 --dataset_type=kitti-odometry
+  ./build/DynSLAMGUI --use_dispnet --dataset_root=path/to/extracted/archive --dataset_type=kitti-odometry
+  e.g. ./build/DynSLAMGUI --use_dispnet --dataset_root=mini-seq-06 --dataset_type=kitti-odometry
 
   Note: shift + A for auto-play
