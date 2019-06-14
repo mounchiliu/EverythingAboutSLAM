@@ -174,7 +174,7 @@ sol:#include "opencv2/imgproc/imgproc.hpp"
 -------------------------------------------------------------------------------------------------------------------
 ## Install MNC
 
-1.Clone the MNC repository:
+1. Clone the MNC repository:
 
 git clone --recursive https://github.com/daijifeng001/MNC.git
 
@@ -197,7 +197,15 @@ git clone --recursive https://github.com/daijifeng001/MNC.git
  - pip3 install opencv-python --user
  - pip3 install easydict --user
 
+3. Build the Cython modules and the gpu_nms, gpu_mask_voting modules by:
+  
+  cd $MNC_ROOT/lib
+
+  make
+
+4.Install Caffe and pycaffe dependencies (see: Caffe installation instructions for official installation guide)
+
+  http://caffe.berkeleyvision.org/installation.html
 
 
- 
 
