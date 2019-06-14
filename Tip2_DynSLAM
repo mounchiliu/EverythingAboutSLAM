@@ -199,9 +199,8 @@ git clone --recursive https://github.com/daijifeng001/MNC.git
 
 3. Build the Cython modules and the gpu_nms, gpu_mask_voting modules by:
   
-  cd $MNC_ROOT/lib
-
-  make
+  - cd $MNC_ROOT/lib
+  - make
 
 4.Install Caffe and pycaffe dependencies (see: Caffe installation instructions for official installation guide)
 
