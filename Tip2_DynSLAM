@@ -206,5 +206,37 @@ git clone --recursive https://github.com/daijifeng001/MNC.git
 
   http://caffe.berkeleyvision.org/installation.html
 
+  (Use the modifed Caffe provided by MNC)
+  
+  - Install BLAS and other Prerequisites mentioned by the official website
+    
+    (https://iqbalnaved.wordpress.com/2016/05/08/installing-caffe-and-pycaffe-on-ubuntu-14-04/)
+  
+  - cd to caffe-MNC
+  - cp Makefile.config.example Makefile.config
+    # Adjust Makefile.config (for example, if using Anaconda Python, or if cuDNN is desired)
+    make all
+    make test
+    make runtest
+    
+  - mkdir build
+  - cd build
+  - cmake ..
+  - make all
+    
+    error: src/caffe/CMakeFiles/caffe.dir/build.make:3246: recipe for target 'lib/libcaffe.so.1.0.0-rc3' failed
+  
+    solve by modify CMakefile:
+    'LIBRARIES += glog gflags protobuf boost_system boost_filesystem m hdf5_hl hdf5'
+    to
+    'LIBRARIES += glog gflags protobuf boost_system boost_filesystem m hdf5_serial_hl hdf5_serial'
+   
+    
+  - make install
+  - make runtest
 
+  
+  
+  
+  
 
