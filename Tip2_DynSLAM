@@ -216,6 +216,22 @@ git clone --recursive https://github.com/daijifeng001/MNC.git
   - cp Makefile.config.example Makefile.config
     # Adjust Makefile.config (for example, if using Anaconda Python, or if cuDNN is desired)
     make all
+    
+    -----------------------------------------------------------------------------------------
+    error:
+    fatal error: hdf5.h
+    solution:
+    Makefile.config: modify INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include
+    to
+    INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/include/hdf5/serial/
+
+    Makefile: modify LIBRARIES += glog gflags protobuf boost_system boost_filesystem m hdf5_hl hdf5
+    to
+    LIBRARIES += glog gflags protobuf boost_system boost_filesystem m hdf5_serial_hl hdf5_serial
+
+    -----------------------------------------------------------------------------------------
+    
+    
     make test
     make runtest
     
