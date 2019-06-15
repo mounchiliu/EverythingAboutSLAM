@@ -260,7 +260,7 @@ git clone --recursive https://github.com/daijifeng001/MNC.git
   - cd to caffe-MNC
   - cp Makefile.config.example Makefile.config
     # Adjust Makefile.config (for example, if using Anaconda Python, or if cuDNN is desired)
-    make all
+    make all -j4
     
     -------------------------------------------------------------------------------------------
     error:
@@ -275,45 +275,86 @@ git clone --recursive https://github.com/daijifeng001/MNC.git
     to
     LIBRARIES += glog gflags protobuf boost_system boost_filesystem m hdf5_serial_hl hdf5_serial
 
-    --------------------------------------------------------------------------------------------
-    error:
-    AR -o .build_release/lib/libcaffe.a
-    LD -o .build_release/lib/libcaffe.so.1.0.0-rc3
-    /usr/bin/ld: /usr/local/lib/libgflags.a(gflags.cc.o): relocation R_X86_64_32 against `.rodata.str1.1' can not be used when making a shared object; recompile with -fPIC
-    /usr/local/lib/libgflags.a: error adding symbols: Bad value
-    collect2: error: ld returned 1 exit status
-    Makefile:555: recipe for target '.build_release/lib/libcaffe.so.1.0.0-rc3' failed
-    make: *** [.build_release/lib/libcaffe.so.1.0.0-rc3] Error 1
+   ---------------------------------------------------------------------------------------------
+   error:
+   src/caffe/common.cpp: In function ‘void caffe::GlobalInit(int*, char***)’:
+   src/caffe/common.cpp:45:5: error: ‘::gflags’ has not been declared
+   ::gflags::ParseCommandLineFlags(pargc, pargv, true);
+   
+   solution:
+    In files:
+    caffe/include/caffe/common.hpp
+    caffe/examples/mnist/convert_mnist_data.cpp
     
+    Comment out the ifndef
+
+    // #ifndef GFLAGS_GFLAGS_H_
+    namespace gflags = google;
+    // #endif  // GFLAGS_GFLAGS_H_
+    ----------------------------------------------------------------------------------------------
+    error:
+    undefined reference to `cv::imdecode(cv::_InputArray const&, int)'
+
+    solution:
+    Having this error because I installed opencv3 (to check version: pkg-config --modversion opencv)
+    
+    Modify Makefile.config:
+    
+    # Uncomment if you're using OpenCV 3
+    OPENCV_VERSION := 3
+    
+    # Whatever else you find you need goes here.
+    #INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include
+    #INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/include/hdf5/serial/
+    #LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib
+    INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/include /usr/lib/x86_64-linux-gnu/hdf5/serial/include
+    LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib /usr/lib/x86_64-linux-gnu/hdf5/serial
+
+    
+    and
+    
+    Modify Makefile:
+    LIBRARIES += glog gflags protobuf leveldb snappy \        lmdb boost_system hdf5_hl hdf5 m \        opencv_core opencv_highgui opencv_imgproc opencv_imgcodecs
+    -----------------------------------------------------------------------------------------------
+    
+    
+    make clean
+    make all -j16
+    make pycaffe
+    
+    [For this project, we dont need to do this.
+    make test -j16
+    
+    -----------------------------------------------------------------------------------------------
+    error:
+    src/caffe/test/test_smooth_L1_loss_layer.cpp:11:35: fatal error: caffe/vision_layers.hpp
     
     solution:
-    chmod +x Makefile.config 
-    make clean
-    ./Makefile.config CFLAGS=-fPIC CXXFLAGS=-fPIC --enable-shared
+    find the file
+    $CAFFE_ROOT/src/caffe/test/test_smooth_L1_loss_layer.cpp 
+    comment the 11th line
+    -----------------------------------------------------------------------------------------------
+    ]
 
     
-    ---------------------------------------------------------------------------------------------
-    
-    make test
-    make runtest
-    
-  - mkdir build
-  - cd build
-  - cmake ..
-  - make all
-    
-    error: src/caffe/CMakeFiles/caffe.dir/build.make:3246: recipe for target 'lib/libcaffe.so.1.0.0-rc3' failed
   
-    solve by modify CMakefile:
-    'LIBRARIES += glog gflags protobuf boost_system boost_filesystem m hdf5_hl hdf5'
-    to
-    'LIBRARIES += glog gflags protobuf boost_system boost_filesystem m hdf5_serial_hl hdf5_serial'
-   
+    Demo
+    cd to MNC dir
     
-  - make install
-  - make runtest
-
-  
+    First, download the trained MNC model.
+    ./data/scripts/fetch_mnc_model.sh
+    
+    Run the demo:
+    cd $MNC_ROOT
+    ./tools/demo.py
+    
+    solution for errors:
+    sudo apt-get install python-skimage
+    sudo apt-get install python-protobuf
+    sudo pip2 install easydict 
+    
+    
+    
   
   
   
