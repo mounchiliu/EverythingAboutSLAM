@@ -196,6 +196,8 @@ git clone --recursive https://github.com/daijifeng001/MNC.git
  - pip3 install scipy --user
  - pip3 install opencv-python --user
  - pip3 install easydict --user
+ - pip install PyYAML --user
+
 
 3. Build the Cython modules and the gpu_nms, gpu_mask_voting modules by:
   
@@ -208,18 +210,62 @@ git clone --recursive https://github.com/daijifeng001/MNC.git
 
   (Use the modifed Caffe provided by MNC)
   
+  - Note
+   # In your Makefile.config, make sure to have this line uncommented
+   WITH_PYTHON_LAYER := 1
+   # CUDNN is recommended in building to reduce memory footprint
+   USE_CUDNN := 1 
+   
+   
+  - if you enable cudnn, plz Install CUDNN
+    1.https://www.jianshu.com/p/e22866b72f43
+    
+    2. Then do,
+    cd /usr/local/cuda-8.0/lib64
+    sudo rm -rf libcudnn.so libcudnn.so.5
+    sudo ln -s libcudnn.so.5.0.5 libcudnn.so.5 (Modify it to your version)
+    sudo ln -s libcudnn.so.5 libcudnn.so
+    sudo ldconfig -v
+    
+    ref: https://blog.csdn.net/huang826336127/article/details/86670925
+    
+    When you use the caffe with cudnn and encouter some errors, here is the solution:
+    https://blog.csdn.net/u011070171/article/details/52292680
+    
   - Install BLAS and other Prerequisites mentioned by the official website
     
     (https://iqbalnaved.wordpress.com/2016/05/08/installing-caffe-and-pycaffe-on-ubuntu-14-04/)
   
+  
+  - install GLog & GFlags
+    1. gflags
+    git clone https://github.com/gflags/gflags.git
+    cd gflags
+    mkdir build && cd build
+    cmake .. -DGFLAGS_NAMESPACE=google -DCMAKE_CXX_FLAGS=-fPIC ..
+    make -j4
+    sudo make install
+    
+    2. glog
+    cd ~
+    sudo apt-get install autoconf automake libtool
+    git clone https://github.com/google/glog
+    ./autogen.sh
+    ./configure
+    make -j8
+    sudo make install
+    
+    
+    
   - cd to caffe-MNC
   - cp Makefile.config.example Makefile.config
     # Adjust Makefile.config (for example, if using Anaconda Python, or if cuDNN is desired)
     make all
     
-    -----------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------
     error:
     fatal error: hdf5.h
+    
     solution:
     Makefile.config: modify INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include
     to
@@ -229,8 +275,24 @@ git clone --recursive https://github.com/daijifeng001/MNC.git
     to
     LIBRARIES += glog gflags protobuf boost_system boost_filesystem m hdf5_serial_hl hdf5_serial
 
-    -----------------------------------------------------------------------------------------
+    --------------------------------------------------------------------------------------------
+    error:
+    AR -o .build_release/lib/libcaffe.a
+    LD -o .build_release/lib/libcaffe.so.1.0.0-rc3
+    /usr/bin/ld: /usr/local/lib/libgflags.a(gflags.cc.o): relocation R_X86_64_32 against `.rodata.str1.1' can not be used when making a shared object; recompile with -fPIC
+    /usr/local/lib/libgflags.a: error adding symbols: Bad value
+    collect2: error: ld returned 1 exit status
+    Makefile:555: recipe for target '.build_release/lib/libcaffe.so.1.0.0-rc3' failed
+    make: *** [.build_release/lib/libcaffe.so.1.0.0-rc3] Error 1
     
+    
+    solution:
+    chmod +x Makefile.config 
+    make clean
+    ./Makefile.config CFLAGS=-fPIC CXXFLAGS=-fPIC --enable-shared
+
+    
+    ---------------------------------------------------------------------------------------------
     
     make test
     make runtest
