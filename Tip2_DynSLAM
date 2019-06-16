@@ -350,6 +350,9 @@ git clone --recursive https://github.com/daijifeng001/MNC.git
     cd $MNC_ROOT
     ./tools/demo.py
     
+    monitor gpu per second:
+    watch -n 1 nvidia-smi 
+    
     solution for errors:
     sudo apt-get install python-skimage
     sudo apt-get install python-protobuf
