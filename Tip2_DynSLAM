@@ -192,11 +192,11 @@ git clone --recursive https://github.com/daijifeng001/MNC.git
 
  sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 50]
  
- - pip3 install numpy --user
- - pip3 install scipy --user
- - pip3 install opencv-python --user
- - pip3 install easydict --user
- - pip install PyYAML --user
+ - pip2 install numpy --user
+ - pip2 install scipy --user
+ - pip2 install opencv-python --user
+ - pip2 install easydict --user
+ - pip2 install PyYAML --user
 
 
 3. Build the Cython modules and the gpu_nms, gpu_mask_voting modules by:
@@ -351,7 +351,6 @@ git clone --recursive https://github.com/daijifeng001/MNC.git
     solution for errors:
     sudo apt-get install python-skimage
     sudo apt-get install python-protobuf
-    sudo pip2 install easydict 
     
     
     
