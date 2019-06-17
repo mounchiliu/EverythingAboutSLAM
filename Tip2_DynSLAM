@@ -170,7 +170,7 @@ sol:#include "opencv2/imgproc/imgproc.hpp"
   ./build/DynSLAMGUI --use_dispnet --dataset_root=path/to/extracted/archive --dataset_type=kitti-odometry
   e.g. ./build/DynSLAMGUI --use_dispnet --dataset_root=mini-seq-06 --dataset_type=kitti-odometry
 
-  Note: shift + A for auto-play
+  Note: A for auto-play
 
 
 -------------------------------------------------------------------------------------------------------------------
@@ -366,8 +366,28 @@ git clone --recursive https://github.com/daijifeng001/MNC.git
     
     
     
+    -----------------------------------------------------------------------------------------------------------
     
-  
-  
-  
+    Install libelas-tooling
+    
+    - download the project from
+      http://www.cvlibs.net/download.php?file=libelas.zip
+    
+    - cd to the dir
+    
+    - cmake.
+    
+    - make 
+     ----------------------------------------------------------------------------------------------------------
+      error:
+      error: ‘gflags’ has not been declared
+      
+      In files:
+      src/kitti2klg.cpp:
+      
+      add:
+      namespace gflags = google; 
+      
+     ---------------------------------------------------------------------------------------------------------
+      Run './elas demo' => computes disparity maps for images from the 'img' directory
 
