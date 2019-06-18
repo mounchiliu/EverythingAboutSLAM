@@ -391,3 +391,12 @@ git clone --recursive https://github.com/daijifeng001/MNC.git
      ---------------------------------------------------------------------------------------------------------
       Run './elas demo' => computes disparity maps for images from the 'img' directory
 
+
+
+
+
+
+
+
+- Install Nvidia docker from:
+  https://github.com/NVIDIA/nvidia-docker#quick-start
