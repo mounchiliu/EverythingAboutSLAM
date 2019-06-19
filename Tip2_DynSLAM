@@ -185,7 +185,7 @@ git clone --recursive https://github.com/daijifeng001/MNC.git
 
 2. Install Python packages: numpy, scipy, cython, python-opencv, easydict, yaml.
 
- - sudo apt-get install cython -- user (version 0.25 works fine, if not
+ - sudo apt install cython -- user (version 0.25 works fine, if not
  
  python -m pip install cython==0.25.1 --user
  
