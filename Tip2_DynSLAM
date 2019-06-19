@@ -13,7 +13,7 @@ This makes your project to know which version of opencv you'd like to use
 4.Cuda 8
 4.1 NVIDIA driver
   - Independencies 
-  sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler  --no-install-recommends libboost-all-dev  libopenblas-dev liblapack-dev libatlas-base-dev libgflags-dev libgoogle-glog-dev liblmdb-dev
+  ``sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler  --no-install-recommends libboost-all-dev  libopenblas-dev liblapack-dev libatlas-base-dev libgflags-dev libgoogle-glog-dev liblmdb-dev
 
   - https://www.nvidia.cn/Download/index.aspx?lang=cn 
     Download according to your environment.
