@@ -147,7 +147,10 @@ sol:add #include "opencv2/imgproc/imgproc.hpp"
         #include "opencv2/opencv.hpp"
 
 - 3.error nvcc fatal   : redefinition of argument 'std'
-find the location of the file showing this error.  Modify the cmakelist to delete -std=c++11
+find the location of the file showing this error.  Modify the cmakelist to delete -std=c++11 (may also need modify the CMakeLists.txt of DynSLAM)
+do 
+cmake ..
+make
 
 - 4.error: ‘imread’ is not a member of ‘cv’
 sol:#include "opencv2/imgproc/imgproc.hpp"
