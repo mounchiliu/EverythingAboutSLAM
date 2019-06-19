@@ -398,10 +398,18 @@ git clone --recursive https://github.com/daijifeng001/MNC.git
 
 
 
-
-
-
-
-
 - Install Nvidia docker from:
   https://github.com/NVIDIA/nvidia-docker#quick-start
+  
+  
+  
+
+- Download dispnet from
+  https://github.com/AndreiBarsan/dispnet-flownet-docker/tree/4f4d19b0edf01587cd0f29aa48b00d1459c9f6f7
+
+  put it in the preprossing file.
+  
+  do make in the dir
+  
+  
+
