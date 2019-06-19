@@ -330,6 +330,11 @@ git clone --recursive https://github.com/daijifeng001/MNC.git
     recipe for target '.build_release/src/caffe/proto/caffe.pb.cc' failed
     download and install protobuf from
     https://github.com/google/protobuf/releases/download/v3.4.1/protobuf-cpp-3.4.1.tar.gz
+    
+    or do 
+    sudo apt-get install libprotobuf-dev protobuf-compiler
+    
+    
 
 
     
