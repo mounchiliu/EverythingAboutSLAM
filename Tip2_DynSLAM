@@ -368,7 +368,7 @@ git clone --recursive https://github.com/daijifeng001/MNC.git
     #include <numpy/arrayobject.h>
    
    solution: 
-   sudo apt-get install python-numpy then make clean, make pycaffe
+   sudo apt-get install python-numpy then make clean, make pycaffe (version 1.16.4)
     
     [For this project, we dont need to do this.
     make test -j16
@@ -399,7 +399,12 @@ git clone --recursive https://github.com/daijifeng001/MNC.git
     solution for errors:
     sudo apt-get install python-skimage
     sudo apt-get install python-protobuf
-    
+    sudo pip install matplotlib
+      
+   ImportError: cannot import name _validate_lengths 
+   (Not support this version of mumpy)
+   reinstall numpy
+   pip install numpy==1.15.0
       
     monitor gpu per second:
     watch -n 1 nvidia-smi 
