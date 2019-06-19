@@ -212,7 +212,10 @@ git clone --recursive https://github.com/daijifeng001/MNC.git
 
   (Use the modifed Caffe provided by MNC)
   
+  cd to caffe-mnc
+  
   cp Makefile.config.example Makefile.config
+  
   - Note
    # In your Makefile.config, make sure to have this line uncommented
    WITH_PYTHON_LAYER := 1
