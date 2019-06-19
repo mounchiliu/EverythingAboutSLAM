@@ -362,6 +362,13 @@ git clone --recursive https://github.com/daijifeng001/MNC.git
                 -gencode arch=compute_61,code=compute_61
 
     
+   -----------------------------------------------------------------------------------------------  
+   errors:
+   fatal error: numpy/arrayobject.h: No such file or directory
+    #include <numpy/arrayobject.h>
+   
+   solution: 
+   sudo apt-get install python-numpy then make clean, make pycaffe
     
     [For this project, we dont need to do this.
     make test -j16
