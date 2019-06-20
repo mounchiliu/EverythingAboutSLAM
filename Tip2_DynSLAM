@@ -415,6 +415,8 @@ git clone --recursive https://github.com/daijifeng001/MNC.git
     If you got errors like out of memory, modify the mnc_config.py file, (limitation of your GPU memory)
     change all the value that relates to 'size' to a smaller one.
     
+    - run on kitti datasets:
+    `` ./tools/demo.py --input /home/user1/Mengqi/DynSLAM/datasets/tracking/training/image_02/0002 --output /home/user1/Mengqi/DynSLAM/datasets/tracking/training/seg_output
     
     
     -----------------------------------------------------------------------------------------------------------
