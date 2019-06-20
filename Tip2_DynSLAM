@@ -459,3 +459,9 @@ git clone --recursive https://github.com/daijifeng001/MNC.git
   
   
 
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+for DynSLAM,
+preprocessing kitti tracking datasets:
+- ./scripts/preprocess-sequence.sh kitti-tracking ./datasets/tracking/ training 2
