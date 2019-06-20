@@ -402,12 +402,12 @@ git clone --recursive https://github.com/daijifeng001/MNC.git
     sudo pip install matplotlib
       
    ImportError: cannot import name _validate_lengths 
-   (Not support this version of mumpy)
-   reinstall numpy
-   pip install numpy==1.15.0
+   (Not support this version of scikit-image)
+   reinstall using
+   - pip install -U scikit-image
       
     monitor gpu per second:
-    watch -n 1 nvidia-smi 
+   -  watch -n 1 nvidia-smi 
     
     
     
