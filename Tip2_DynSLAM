@@ -465,3 +465,17 @@ git clone --recursive https://github.com/daijifeng001/MNC.git
 for DynSLAM,
 preprocessing kitti tracking datasets:
 - ./scripts/preprocess-sequence.sh kitti-tracking ./datasets/tracking/ training 2
+
+Error:
+docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock
+
+sudo adduser $USER docker
+newgrp docker
+
+
+something wrong with pip, (error: main cant find)
+So I comment in Dockerfile: (cuz I have got this environment set)
+#RUN pip install --upgrade pip && \
+#    pip install Cython numpy scipy scikit-image matplotlib h5py nose pandas \
+#    protobuf python-gflags Pillow six python-dateutil pyyaml \
+#    easydict opencv-python
