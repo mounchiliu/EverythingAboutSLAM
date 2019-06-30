@@ -475,6 +475,9 @@ sudo adduser $USER docker
 newgrp docker
 
 
+depth:
+./process-kitti-tracking.sh ../../datasets/tracking testing 10
+
 something wrong with pip, (error: main cant find)
 So I comment in Dockerfile: (cuz I have got this environment set)
 #RUN pip install --upgrade pip && \
