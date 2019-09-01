@@ -67,7 +67,8 @@ I built a directory for all the dependencies of SLAM
  
     errors:
       - CUDA_nppi_LIBRARY (ADVANCED)     linked by target "opencv_core" in director ...
-      - solution: https://blog.csdn.net/chenjiyou363753068/article/details/84349687
+      - error because of high cuda version
+      - solution: cmake .. -DCMAKE_BUILD_TYPE=Release -DCUDA_nppi_LIBRARY=true
  
  
  ` Install Eigen3
