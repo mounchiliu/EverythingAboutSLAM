@@ -65,6 +65,9 @@ I built a directory for all the dependencies of SLAM
             make -j4 (or 'make' is ok)
             sudo make install
  
+    errors:
+      - CUDA_nppi_LIBRARY (ADVANCED)     linked by target "opencv_core" in director ...
+      - solution: https://blog.csdn.net/chenjiyou363753068/article/details/84349687
  
  
  ` Install Eigen3
