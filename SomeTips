@@ -49,10 +49,13 @@ I built a directory for all the dependencies of SLAM
    ` Install dependencies
    $ sudo apt-get install build-essential
    $ sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
-   $ sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev # Peocessing images
+   $ sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev 
+   (# Peocessing images)
    $ sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev liblapacke-dev
-   $ sudo apt-get install libxvidcore-dev libx264-dev # Processing video
-   $ sudo apt-get install libatlas-base-dev gfortran # Optimization of opencv
+   $ sudo apt-get install libxvidcore-dev libx264-dev 
+   (# Processing video)
+   $ sudo apt-get install libatlas-base-dev gfortran 
+   (# Optimization of opencv)
    (Note: there's a lot of dependencies supported in opencv, the above is enough for most SLAM projects)
    
    cd to the dir 
