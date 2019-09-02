@@ -173,11 +173,9 @@ sol:#include "opencv2/imgproc/imgproc.hpp"
   ./build/DynSLAMGUI --use_dispnet --dataset_root=path/to/extracted/archive --dataset_type=kitti-odometry
   e.g. ./build/DynSLAMGUI --use_dispnet --dataset_root=mini-seq-06 --dataset_type=kitti-odometry
 
-  Note: A for auto-play
-
 
 -------------------------------------------------------------------------------------------------------------------
-## Install MNC
+## Environment seeting: MNC
 
 1. Clone the MNC repository:
 
