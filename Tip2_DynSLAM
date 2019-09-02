@@ -175,7 +175,7 @@ sol:#include "opencv2/imgproc/imgproc.hpp"
 
 
 -------------------------------------------------------------------------------------------------------------------
-## Environment seeting: MNC
+## Environment setting: MNC
 
 1. Clone the MNC repository:
 
