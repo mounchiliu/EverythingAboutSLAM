@@ -133,7 +133,7 @@ This makes your project to know which version of opencv you'd like to use
 6.Install the prerequisites (Ubuntu example):
 sudo apt-get install libxmu-dev libxi-dev freeglut3 freeglut3-dev glew-utils libglew-dev libglew-dbg libpthread-stubs0-dev binutils-dev libgflags-dev libpng++-dev libeigen3-dev
  
-7.build project
+7.build DynSLAM project
 mkdir build && cd build && cmake .. && make -j$(nproc)
 
 error:
